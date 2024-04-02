@@ -1,6 +1,6 @@
 # Weather App
 
-# Coded by Angel Quintero
+### Coded by Angel Quintero
 
 # Weather App
 
