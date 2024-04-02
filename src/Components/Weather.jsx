@@ -72,6 +72,7 @@ const Weather = () => {
   };
   return (
     // Search Bar and search button
+
     <div className="container">
       <div className="topBar-container">
         <input
