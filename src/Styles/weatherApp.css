@@ -1,31 +1,31 @@
 .container {
   display: flex;
   flex-direction: column;
-  height: 700px;
+  height: auto; /* Cambiado a auto para que la altura se ajuste al contenido */
   width: 90%;
   margin: auto;
   margin-top: 70px;
   border-radius: 12px;
   background-image: linear-gradient(180deg, #6b0644 0%, #3b2f80 100%);
+  padding: 20px; /* Añadido un poco de padding */
 }
 
 .topBar-container {
   display: flex;
   justify-content: center;
   gap: 14px;
-  padding-top: 60px;
+  padding-top: 30px; /* Reducido el padding para dispositivos más pequeños */
 }
 
 .topBar-container input {
   display: flex;
-  height: 78px;
-  width: 362px;
-  border: none;
+  height: 50px;
+  width: 100%;
   outline: none;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
-  border-radius: 50px;
-  padding-left: 40px;
+  border-radius: 25px;
+  padding-left: 20px;
   color: #333132;
   background-color: rgb(175, 175, 175);
 }
@@ -34,54 +34,69 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 78px;
-  height: 78px;
-  border-radius: 40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
   cursor: pointer;
   background-color: rgb(175, 175, 175);
 }
+
 .Cloud-icon {
   display: flex;
   justify-content: center;
-  margin-top: 29px;
+  margin-top: 20px;
 }
+
 .weather-temp {
   display: flex;
   justify-content: center;
   color: #ffff;
   font-weight: 400;
-  font-size: 5rem;
+  font-size: 3rem;
 }
+
 .weather-location {
   display: flex;
   justify-content: center;
   color: #ffff;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 400;
 }
+
 .data-container {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 30px;
   color: #ffff;
 }
+
 .data__element {
   display: flex;
   align-items: flex-start;
   gap: 12px;
   margin: auto;
 }
+
 .data__icon {
-  margin-top: 10px;
+  margin-top: 5px;
 }
+
 .info {
-  font-size: 34px;
+  font-size: 24px;
   font-weight: 400;
 }
+
 .info__text {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
 }
+
+@media (min-width: 768px) {
+  .container {
+    width: 70%;
+  }
+}
+
 @media (min-width: 1115px) {
   .container {
     width: 50%;
