@@ -1,17 +1,22 @@
 .container {
-  height: 829px;
-  width: 609;
+  border: solid RED;
+  display: flex;
+  flex-direction: column;
+  height: 700px;
+  width: 90%;
   margin: auto;
-  margin-top: 75px;
+  margin-top: 70px;
   border-radius: 12px;
   background-image: linear-gradient(180deg, #6b0644 0%, #3b2f80 100%);
 }
+
 .topBar-container {
   display: flex;
   justify-content: center;
   gap: 14px;
   padding-top: 60px;
 }
+
 .topBar-container input {
   display: flex;
   height: 78px;
@@ -25,6 +30,7 @@
   color: #333132;
   background-color: rgb(175, 175, 175);
 }
+
 .topBar__search-icon {
   display: flex;
   justify-content: center;
@@ -34,4 +40,51 @@
   border-radius: 40px;
   cursor: pointer;
   background-color: rgb(175, 175, 175);
+}
+.Cloud-icon {
+  display: flex;
+  justify-content: center;
+  margin-top: 29px;
+}
+.weather-temp {
+  display: flex;
+  justify-content: center;
+  color: #ffff;
+  font-weight: 400;
+  font-size: 5rem;
+}
+.weather-location {
+  display: flex;
+  justify-content: center;
+  color: #ffff;
+  font-size: 2rem;
+  font-weight: 400;
+}
+.data-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  color: #ffff;
+}
+.data__element {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: auto;
+}
+.data__icon {
+  margin-top: 10px;
+}
+.info {
+  font-size: 34px;
+  font-weight: 400;
+}
+.info__text {
+  font-size: 20px;
+  font-weight: 400;
+}
+@media (min-width: 1115px) {
+  .container {
+    width: 50%;
+  }
 }
