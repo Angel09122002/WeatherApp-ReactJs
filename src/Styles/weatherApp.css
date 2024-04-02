@@ -1,5 +1,4 @@
 .container {
-  border: solid RED;
   display: flex;
   flex-direction: column;
   height: 700px;

@@ -1,17 +1,18 @@
-import React from "react";
-import "../Styles/weatherApp.css";
-import searchIcon from "../Assets/search.png";
+import React, { useState } from "react";
 import clear from "../Assets/clear.png";
 import cloud from "../Assets/cloud.png";
 import drizzle from "../Assets/drizzle.png";
 import humidity from "../Assets/humidity.png";
 import rain from "../Assets/rain.png";
+import searchIcon from "../Assets/search.png";
 import snow from "../Assets/snow.png";
 import wind from "../Assets/wind.png";
+import "../Styles/weatherApp.css";
 
 const Weather = () => {
   let api_key = "c27743956e6d3718d177ac34feabee23";
 
+  const [Wicon, setWicon] = useState(cloud);
   const search = async () => {
     const element = document.getElementsByClassName("topBar__cityInput");
     if (element[0].value === "") {
@@ -26,8 +27,48 @@ const Weather = () => {
     const humidity = document.getElementsByClassName("info-humidity-percent");
     const wind = document.getElementsByClassName("info-wind-speed");
 
-    humidity[0].innerHTML = data.main.humidity;
-    wind[0].innerHTML = data.wind.speed;
+    temperature[0].innerHTML = Math.floor(data.main.temp) + "°c";
+    location[0].innerHTML = data.name;
+    humidity[0].innerHTML = data.main.humidity + "%";
+    wind[0].innerHTML = Math.floor(data.wind.speed) + " Km/h";
+
+    // Change icon according to the weather
+
+    if (data.weather[0].icon === "01d" || data.weather[0].icon === "01n") {
+      setWicon(clear);
+    } else if (
+      data.weather[0].icon === "02d" ||
+      data.weather[0].icon === "02n"
+    ) {
+      setWicon(cloud);
+    } else if (
+      data.weather[0].icon === "03d" ||
+      data.weather[0].icon === "03n"
+    ) {
+      setWicon(drizzle);
+    } else if (
+      data.weather[0].icon === "04d" ||
+      data.weather[0].icon === "04n"
+    ) {
+      setWicon(snow);
+    } else if (
+      data.weather[0].icon === "09d" ||
+      data.weather[0].icon === "09n"
+    ) {
+      setWicon(rain);
+    } else if (
+      data.weather[0].icon === "10d" ||
+      data.weather[0].icon === "10n"
+    ) {
+      setWicon(rain);
+    } else if (
+      data.weather[0].icon === "13d" ||
+      data.weather[0].icon === "13n"
+    ) {
+      setWicon(snow);
+    } else {
+      setWicon(clear);
+    }
   };
   return (
     // Search Bar and search button
@@ -51,7 +92,7 @@ const Weather = () => {
 
       {/* Weather Icons and info */}
       <div className="weather-icon">
-        <img src={cloud} alt="Cloud-icon" />
+        <img src={Wicon} alt="Cloud-icon" />
       </div>
       <div className="weather-temp">24°C</div>
       <div className="weather-location">London</div>
